@@ -1,6 +1,8 @@
 import * as React from "react"
+import { useEffect } from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import { Link } from "gatsby"
+
 
 const pageStyles = {
   color: "#232129",
@@ -137,7 +139,15 @@ const links = [
   },
 ]
 
+
+
+
 const IndexPage: React.FC<PageProps> = () => {
+
+
+  useEffect(()=>{
+    console.log(document?.location?.origin)
+  }, [])
   return (
     <main style={pageStyles}>
       <h1 style={headingStyles}>
@@ -146,7 +156,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
       </h1>
       <h2 style={headingStyles}>
-        <Link to="https://gatsbytestingmain53894.gatsbyjs.io/testing">testing</Link>
+        <Link to="/testing">testing</Link>
         <Link to="https://yellow.co.nz/">YW testing</Link>
         <br />
         <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
